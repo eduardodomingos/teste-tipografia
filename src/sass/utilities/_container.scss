@@ -1,0 +1,6 @@
+@use "../abstracts" as *;
+
+.container {
+	margin: 0 auto;
+	max-width: toRem(1000);
+}
