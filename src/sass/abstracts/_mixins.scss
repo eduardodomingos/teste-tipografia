@@ -1,3 +1,13 @@
+@use "breakpoints" as *;
+
+@mixin mq($key) {
+	$size: map-get($breakpoints, $key);
+
+	@media only screen and (min-width: $size) {
+		@content;
+	}
+}
+
 @mixin pseudo(
 	$loc: before,
 	$content: "",
@@ -17,5 +27,19 @@
 		left: $left;
 		right: $right;
 		@content;
+	}
+}
+
+@mixin headings($from: 1, $to: 6) {
+	%base-heading {
+		@content;
+	}
+
+	@if $from >= 1 and $to <= 6 {
+		@for $i from $from through $to {
+			h#{$i} {
+				@extend %base-heading;
+			}
+		}
 	}
 }

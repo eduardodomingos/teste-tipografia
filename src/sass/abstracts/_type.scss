@@ -1,0 +1,60 @@
+@use "functions" as *;
+
+$rhythm: 0.5rem;
+
+// Minor Third for mobile
+// Major Third for desktop
+$type-scale: (
+	mobile: (
+		800: (
+			font-size: 2.074rem,
+			line-height: 2.5rem,
+		),
+		700: (
+			font-size: 1.728rem,
+			line-height: 2rem,
+		),
+		600: (
+			font-size: 1.44rem,
+			line-height: 2rem,
+		),
+		500: (
+			font-size: 1.2rem,
+			line-height: 1.5rem,
+		),
+		400: (
+			font-size: 1rem,
+			line-height: 1.5rem,
+		),
+		300: (
+			font-size: 0.833rem,
+			line-height: 1rem,
+		),
+	),
+	desktop: (
+		800: (
+			font-size: 2.441rem,
+			line-height: 3rem,
+		),
+		700: (
+			font-size: 1.953rem,
+			line-height: 2.5rem,
+		),
+		600: (
+			font-size: 1.563rem,
+			line-height: 2rem,
+		),
+		500: (
+			font-size: 1.25rem,
+			line-height: 1.5rem,
+		),
+		400: (
+			font-size: 1rem,
+			line-height: 1.5rem,
+		),
+		300: (
+			font-size: 0.8rem,
+			line-height: 1rem,
+		),
+	),
+);

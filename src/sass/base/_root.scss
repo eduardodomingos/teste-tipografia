@@ -1,0 +1,35 @@
+@use "../abstracts" as *;
+
+:root {
+	@each $color, $shade in $colors {
+		@each $prop, $value in $shade {
+			--clr-#{$color}-#{$prop}: #{$value};
+		}
+	}
+
+	@each $screen-size, $item in $type-scale {
+		@if $screen-size == mobile {
+			@each $_prop, $value in $item {
+				@each $prop, $value in $value {
+					@if ($prop == font-size) {
+						--fs-#{$_prop}: #{$value};
+					} @else {
+						--lh-#{$_prop}: #{$value};
+					}
+				}
+			}
+		} @else if $screen-size == desktop {
+			@include mq(desktop) {
+				@each $_prop, $value in $item {
+					@each $prop, $value in $value {
+						@if ($prop == font-size) {
+							--fs-#{$_prop}: #{$value};
+						} @else {
+							--lh-#{$_prop}: #{$value};
+						}
+					}
+				}
+			}
+		}
+	}
+}
